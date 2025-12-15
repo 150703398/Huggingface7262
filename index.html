@@ -1,175 +1,93 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>老年痴呆症（阿尔茨海默病）科普</title>
-  <style>
-    :root {
-      --bg: #f5f7fa;
-      --card: #ffffff;
-      --text: #333333;
-      --primary: #2b6cb0;
-      --danger: #c53030;
-      --border: #e2e8f0;
-    }
-    body.high-contrast {
-      --bg: #000000;
-      --card: #000000;
-      --text: #ffffff;
-      --primary: #90cdf4;
-      --danger: #feb2b2;
-      --border: #ffffff;
-    }
-    body {
-      margin: 0;
-      font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.8;
-      font-size: 18px;
-    }
-    header {
-      background: linear-gradient(135deg, #2b6cb0, #2f855a);
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    header h1 { margin: 0 0 10px; font-size: 2.4em; }
-    header p { margin: 0; font-size: 1.2em; }
-    .toolbar {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      padding: 15px;
-      background: var(--card);
-      border-bottom: 1px solid var(--border);
-    }
-    .toolbar button {
-      font-size: 16px;
-      padding: 8px 14px;
-      border-radius: 6px;
-      border: 1px solid var(--border);
-      background: var(--card);
-      cursor: pointer;
-    }
-    main { max-width: 960px; margin: 30px auto; padding: 0 20px 40px; }
-    section {
-      background: var(--card);
-      border-radius: 12px;
-      padding: 28px;
-      margin-bottom: 26px;
-      border: 1px solid var(--border);
-    }
-    h2 { color: var(--primary); margin-top: 0; }
-    ul { padding-left: 22px; }
-    li { margin-bottom: 10px; }
-    .img-box { text-align: center; margin: 25px 0; }
-    .img-box svg { max-width: 100%; }
-    .test {
-      border-left: 6px solid var(--danger);
-      padding-left: 20px;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.95em;
-      opacity: 0.85;
-    }
-    @media print {
-      body { background: #ffffff; color: #000000; font-size: 14px; }
-      .toolbar { display: none; }
-      section { page-break-inside: avoid; }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>老年痴呆症（阿尔茨海默病）科普</title>
+<style>
+body{margin:0;font-family:"Microsoft YaHei",Arial,sans-serif;background:#f5f7fa;color:#222;line-height:1.8;font-size:18px}
+header{background:#1f4fd8;color:#fff;padding:30px 15px;text-align:center}
+header h1{margin:0;font-size:2.2em}
+header p{margin:8px 0 0}
+.toolbar{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:12px;background:#fff;border-bottom:1px solid #ddd}
+button{font-size:16px;padding:8px 14px;border:1px solid #ccc;border-radius:6px;background:#fff;cursor:pointer}
+main{max-width:960px;margin:20px auto;padding:0 15px}
+section{background:#fff;border-radius:10px;padding:24px;margin-bottom:22px;border:1px solid #e5e5e5}
+h2{color:#1f4fd8;margin-top:0}
+ul{padding-left:22px}
+.img-box{text-align:center;margin:20px 0}
+.img-box img{max-width:100%;height:auto;border-radius:8px}
+body.big-font{font-size:22px}
+footer{text-align:center;font-size:14px;color:#666;padding:20px}
+@media print{.toolbar{display:none}body{background:#fff;color:#000;font-size:14px}}
+</style>
 </head>
 <body>
 <header>
-  <h1 data-zh="老年痴呆症（阿尔茨海默病）" data-en="Alzheimer’s Disease">老年痴呆症（阿尔茨海默病）</h1>
-  <p data-zh="认识疾病 · 早期发现 · 科学照护" data-en="Understand · Detect Early · Care Properly">认识疾病 · 早期发现 · 科学照护</p>
+<h1 id="title">老年痴呆症（阿尔茨海默病）</h1>
+<p id="subtitle">认识疾病 · 早期发现 · 科学照护</p>
 </header>
 
 <div class="toolbar">
-  <button onclick="toggleLang()">🌍 中文 / English</button>
-  <button onclick="toggleContrast()">👓 老年友好模式</button>
-  <button onclick="window.print()">🖨 打印 / 导出 PDF</button>
+<button onclick="switchLang()">🌍 中文 / English</button>
+<button onclick="toggleFont()">👓 老年友好大字</button>
+<button onclick="window.print()">🖨 打印 / PDF</button>
 </div>
 
 <main>
 <section>
-  <h2 data-zh="什么是老年痴呆症？" data-en="What is Alzheimer’s Disease?">什么是老年痴呆症？</h2>
-  <p data-zh="老年痴呆症通常指阿尔茨海默病，是一种慢性、进行性的神经退行性疾病，并非正常衰老。" data-en="Alzheimer’s disease is a chronic, progressive neurodegenerative disorder and is not a normal part of aging.">
-    老年痴呆症通常指阿尔茨海默病，是一种慢性、进行性的神经退行性疾病，并非正常衰老。
-  </p>
-  <div class="img-box">
-    <!-- Base64 SVG 示意图 -->
-    <svg width="640" height="360" viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg">
-      <rect width="640" height="360" fill="#edf2f7" />
-      <g transform="translate(40,60)">
-        <rect width="250" height="240" rx="18" fill="#e6fffa" stroke="#2b6cb0" stroke-width="2" />
-        <text x="125" y="-15" text-anchor="middle" font-size="18">正常大脑</text>
-        <circle cx="125" cy="120" r="85" fill="#bee3f8" />
-        <text x="125" y="220" text-anchor="middle" font-size="14">结构完整</text>
-      </g>
-      <g transform="translate(350,60)">
-        <rect width="250" height="240" rx="18" fill="#fff5f5" stroke="#c53030" stroke-width="2" />
-        <text x="125" y="-15" text-anchor="middle" font-size="18">阿尔茨海默病</text>
-        <circle cx="125" cy="120" r="65" fill="#feb2b2" />
-        <text x="125" y="220" text-anchor="middle" font-size="14">明显萎缩</text>
-      </g>
-    </svg>
-  </div>
+<h2 id="h1">什么是老年痴呆症？</h2>
+<p id="p1">老年痴呆症通常指阿尔茨海默病，是一种慢性、进行性的神经退行性疾病，并非正常衰老。</p>
+<div class="img-box">
+<img alt="正常大脑与阿尔茨海默病大脑对比图" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQwIiBoZWlnaHQ9IjM2MCIgdmlld0JveD0iMCAwIDY0MCAzNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjY0MCIgaGVpZ2h0PSIzNjAiIGZpbGw9IiNmNWY3ZmEiLz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0MCw2MCkiPjxyZWN0IHdpZHRoPSIyNTAiIGhlaWdodD0iMjQwIiByeD0iMTYiIGZpbGw9IiNlNmZmZmEiIHN0cm9rZT0iIzFmNGZkOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iMTI1IiB5PSItMTUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTgiPuato+W4uOiEszwvdGV4dD48Y2lyY2xlIGN4PSIxMjUiIGN5PSIxMjAiIHI9IjgwIiBmaWxsPSIjYmVlM2Y4Ii8+PHRleHQgeD0iMTI1IiB5PSIyMjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTQiPuato+W4uOe7k+S9kzwvdGV4dD48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzUwLDYwKSI+PHJlY3Qgd2lkdGg9IjI1MCIgaGVpZ2h0PSIyNDAiIHJ4PSIxNiIgZmlsbD0iI2ZmZWVlZSIgc3Ryb2tlPSIjYzUzMDMwIiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSIxMjUiIHk9Ii0xNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxOCI+6Zi/5bCU6YGT5rW36buE55eFPC90ZXh0PjxjaXJjbGUgY3g9IjEyNSIgY3k9IjEyMCIgcj0iNjUiIGZpbGw9IiNmZWIzYjIiLz48dGV4dCB4PSIxMjUiIHk9IjIyMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxNCI+5pi+5o+Q6JC95a2mPC90ZXh0PjwvZz48L3N2Zz4=" />
+</div>
 </section>
 
 <section>
-  <h2 data-zh="常见症状" data-en="Common Symptoms">常见症状</h2>
-  <ul>
-    <li data-zh="记忆力明显下降" data-en="Significant memory loss">记忆力明显下降</li>
-    <li data-zh="时间、地点定向障碍" data-en="Disorientation in time and place">时间、地点定向障碍</li>
-    <li data-zh="语言表达困难" data-en="Difficulty speaking">语言表达困难</li>
-    <li data-zh="性格和情绪改变" data-en="Personality and mood changes">性格和情绪改变</li>
-  </ul>
-</section>
-
-<section class="test">
-  <h2 data-zh="早期简单自测（非诊断）" data-en="Simple Self-Check (Not Diagnostic)">早期简单自测（非诊断）</h2>
-  <ul>
-    <li data-zh="是否经常忘记刚发生的事情？" data-en="Do you often forget recent events?">是否经常忘记刚发生的事情？</li>
-    <li data-zh="是否容易迷路？" data-en="Do you get lost easily?">是否容易迷路？</li>
-    <li data-zh="是否重复问同样的问题？" data-en="Do you repeat the same questions?">是否重复问同样的问题？</li>
-  </ul>
-  <p data-zh="若多项为是，建议尽早就医。" data-en="If several answers are yes, seek medical advice.">
-    若多项为是，建议尽早就医。
-  </p>
+<h2 id="h2">常见症状</h2>
+<ul id="list1">
+<li>近期记忆力明显下降</li>
+<li>容易迷路或搞混时间</li>
+<li>语言表达困难</li>
+<li>性格与情绪改变</li>
+</ul>
 </section>
 
 <section>
-  <h2 data-zh="家庭照护建议" data-en="Caregiver Tips">家庭照护建议</h2>
-  <ul>
-    <li data-zh="保持规律作息" data-en="Maintain daily routines">保持规律作息</li>
-    <li data-zh="环境安全，防走失、防跌倒" data-en="Ensure a safe environment">环境安全，防走失、防跌倒</li>
-    <li data-zh="给予耐心和尊重" data-en="Be patient and respectful">给予耐心和尊重</li>
-  </ul>
+<h2 id="h3">早期自测（非诊断）</h2>
+<ul id="list2">
+<li>是否经常忘记刚发生的事情？</li>
+<li>是否反复询问同样问题？</li>
+<li>是否对熟悉的路线感到陌生？</li>
+</ul>
+<p id="p2">如多项为“是”，建议尽早前往正规医院就诊。</p>
 </section>
 </main>
 
 <footer>
-  <p data-zh="本页面仅用于健康科普，不替代专业医疗意见。" data-en="This page is for educational purposes only.">
-    本页面仅用于健康科普，不替代专业医疗意见。
-  </p>
+<p id="foot">本页面仅用于健康科普，不替代专业医疗建议。</p>
 </footer>
 
 <script>
-  let lang = 'zh';
-  function toggleLang() {
-    lang = lang === 'zh' ? 'en' : 'zh';
-    document.querySelectorAll('[data-zh]').forEach(el => {
-      el.textContent = el.getAttribute('data-' + lang);
-    });
+let lang='zh';
+function switchLang(){
+  lang = lang==='zh'?'en':'zh';
+  if(lang==='en'){
+    title.innerText="Alzheimer’s Disease";
+    subtitle.innerText="Understand · Detect Early · Care Properly";
+    h1.innerText="What is Alzheimer’s Disease?";
+    p1.innerText="Alzheimer’s disease is a chronic, progressive neurodegenerative disorder and is not a normal part of aging.";
+    h2.innerText="Common Symptoms";
+    list1.innerHTML="<li>Significant memory loss</li><li>Disorientation in time or place</li><li>Difficulty speaking</li><li>Personality and mood changes</li>";
+    h3.innerText="Simple Self-Check (Not Diagnostic)";
+    list2.innerHTML="<li>Do you forget recent events?</li><li>Do you repeat the same questions?</li><li>Do familiar places feel unfamiliar?</li>";
+    p2.innerText="If several answers are yes, seek medical advice early.";
+    foot.innerText="This page is for educational purposes only.";
+  }else{
+    location.reload();
   }
-  function toggleContrast() {
-    document.body.classList.toggle('high-contrast');
-  }
+}
+function toggleFont(){document.body.classList.toggle('big-font');}
 </script>
 </body>
 </html>

@@ -39,121 +39,68 @@ footer{text-align:center;font-size:14px;color:#666;padding:20px}
 <h2 id="h1">什么是老年痴呆症？</h2>
 <p id="p1">老年痴呆症通常指阿尔茨海默病，是一种慢性、进行性的神经退行性疾病，并非正常衰老。</p>
 <div class="img-box">
-<img alt="正常大脑与阿尔茨海默病大脑对比示意图" src="https://via.placeholder.com/600x300?text=脑部对比示意图">
+  <!-- 使用网络图片链接替换Base64图片 -->
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Alzheimer_brain_comparison.png" alt="正常大脑与阿尔茨海默病大脑对比示意图">
 </div>
 </section>
 
 <section>
-<h2 id="h2">早期症状</h2>
-<ul id="ul1">
+<h2 id="h2">主要症状</h2>
+<ul>
 <li>记忆力下降，尤其是近期记忆</li>
-<li>判断力减弱，做决定困难</li>
 <li>语言表达困难</li>
-<li>情绪波动或性格改变</li>
-<li>迷路或对时间、地点的感知混乱</li>
+<li>方向感和认知能力下降</li>
+<li>情绪不稳定，易焦虑或抑郁</li>
+<li>日常生活能力下降</li>
 </ul>
-<div class="img-box">
-<img alt="老年痴呆症早期症状示意图" src="https://via.placeholder.com/600x300?text=早期症状示意图">
-</div>
 </section>
 
 <section>
-<h2 id="h3">预防与照护</h2>
-<ul id="ul2">
-<li>保持大脑活跃，学习新知识</li>
-<li>规律运动，保持身体健康</li>
-<li>均衡饮食，摄入丰富抗氧化物</li>
-<li>保持良好社交，避免孤独</li>
-<li>定期体检，早发现早干预</li>
+<h2 id="h3">早期发现与诊断</h2>
+<p>通过医学检查、认知测试以及脑部影像学检查可以及早发现阿尔茨海默病的迹象。</p>
+</section>
+
+<section>
+<h2 id="h4">科学照护建议</h2>
+<ul>
+<li>保持规律作息和健康饮食</li>
+<li>适量体育锻炼，增强心脑功能</li>
+<li>认知训练，如记忆练习和脑力游戏</li>
+<li>心理支持与社会互动</li>
+<li>遵医嘱用药</li>
 </ul>
-<div class="img-box">
-<img alt="老年痴呆症照护示意图" src="https://via.placeholder.com/600x300?text=照护示意图">
-</div>
 </section>
 </main>
 
 <footer>
-<p>© 2025 老年痴呆症科普网页 | Powered by OpenAI ChatGPT</p>
+<p>© 2025 老年痴呆症科普网站</p>
 </footer>
 
 <script>
-let lang = 'cn';
-
-const texts = {
-  en: {
-    title: "Alzheimer's Disease (Dementia)",
-    subtitle: "Understanding · Early Detection · Scientific Care",
-    h1: "What is Alzheimer's Disease?",
-    p1: "Alzheimer's disease is a chronic, progressive neurodegenerative disease, not normal aging.",
-    h2: "Early Symptoms",
-    ul1: [
-      "Memory loss, especially recent memories",
-      "Impaired judgment and decision-making",
-      "Difficulty with language and communication",
-      "Mood swings or personality changes",
-      "Getting lost or confusion about time and place"
-    ],
-    h3: "Prevention & Care",
-    ul2: [
-      "Keep your brain active, learn new knowledge",
-      "Exercise regularly, maintain physical health",
-      "Balanced diet, rich in antioxidants",
-      "Maintain social connections to avoid loneliness",
-      "Regular medical checkups for early detection"
-    ]
-  },
-  cn: {
-    title: "老年痴呆症（阿尔茨海默病）",
-    subtitle: "认识疾病 · 早期发现 · 科学照护",
-    h1: "什么是老年痴呆症？",
-    p1: "老年痴呆症通常指阿尔茨海默病，是一种慢性、进行性的神经退行性疾病，并非正常衰老。",
-    h2: "早期症状",
-    ul1: [
-      "记忆力下降，尤其是近期记忆",
-      "判断力减弱，做决定困难",
-      "语言表达困难",
-      "情绪波动或性格改变",
-      "迷路或对时间、地点的感知混乱"
-    ],
-    h3: "预防与照护",
-    ul2: [
-      "保持大脑活跃，学习新知识",
-      "规律运动，保持身体健康",
-      "均衡饮食，摄入丰富抗氧化物",
-      "保持良好社交，避免孤独",
-      "定期体检，早发现早干预"
-    ]
+function switchLang(){
+  if(document.documentElement.lang === "zh-CN"){
+    document.documentElement.lang = "en";
+    document.getElementById("title").innerText="Alzheimer's Disease";
+    document.getElementById("subtitle").innerText="Understand · Early Detection · Care";
+    document.getElementById("h1").innerText="What is Alzheimer's Disease?";
+    document.getElementById("p1").innerText="Alzheimer's disease is a chronic, progressive neurodegenerative disorder, not normal aging.";
+    document.getElementById("h2").innerText="Main Symptoms";
+    document.getElementById("h3").innerText="Early Detection and Diagnosis";
+    document.getElementById("h4").innerText="Care Suggestions";
+  }else{
+    document.documentElement.lang = "zh-CN";
+    document.getElementById("title").innerText="老年痴呆症（阿尔茨海默病）";
+    document.getElementById("subtitle").innerText="认识疾病 · 早期发现 · 科学照护";
+    document.getElementById("h1").innerText="什么是老年痴呆症？";
+    document.getElementById("p1").innerText="老年痴呆症通常指阿尔茨海默病，是一种慢性、进行性的神经退行性疾病，并非正常衰老。";
+    document.getElementById("h2").innerText="主要症状";
+    document.getElementById("h3").innerText="早期发现与诊断";
+    document.getElementById("h4").innerText="科学照护建议";
   }
-};
-
-function switchLang() {
-  lang = (lang === 'cn') ? 'en' : 'cn';
-  document.getElementById('title').innerText = texts[lang].title;
-  document.getElementById('subtitle').innerText = texts[lang].subtitle;
-  document.getElementById('h1').innerText = texts[lang].h1;
-  document.getElementById('p1').innerText = texts[lang].p1;
-  document.getElementById('h2').innerText = texts[lang].h2;
-  document.getElementById('h3').innerText = texts[lang].h3;
-
-  const ul1El = document.getElementById('ul1');
-  ul1El.innerHTML = '';
-  texts[lang].ul1.forEach(item => {
-    const li = document.createElement('li');
-    li.innerText = item;
-    ul1El.appendChild(li);
-  });
-
-  const ul2El = document.getElementById('ul2');
-  ul2El.innerHTML = '';
-  texts[lang].ul2.forEach(item => {
-    const li = document.createElement('li');
-    li.innerText = item;
-    ul2El.appendChild(li);
-  });
 }
 
-function toggleFont() {
-  document.body.classList.toggle('big-font');
+function toggleFont(){
+  document.body.classList.toggle("big-font");
 }
 </script>
 </body>

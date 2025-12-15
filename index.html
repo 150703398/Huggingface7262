@@ -15,6 +15,8 @@ main{max-width:960px;margin:20px auto;padding:0 15px}
 section{background:#fff;border-radius:10px;padding:24px;margin-bottom:22px;border:1px solid #e5e5e5}
 h2{color:#1f4fd8;margin-top:0}
 ul{padding-left:22px}
+.img-box{text-align:center;margin:20px 0}
+.img-box img{max-width:100%;height:auto;border-radius:8px}
 body.big-font{font-size:22px}
 footer{text-align:center;font-size:14px;color:#666;padding:20px}
 @media print{.toolbar{display:none}body{background:#fff;color:#000;font-size:14px}}
@@ -27,19 +29,23 @@ footer{text-align:center;font-size:14px;color:#666;padding:20px}
 </header>
 
 <div class="toolbar">
-<button onclick="switchLang()">🌍 中文 / English</button>
 <button onclick="toggleFont()">👓 老年友好大字</button>
 <button onclick="window.print()">🖨 打印 / PDF</button>
 </div>
 
 <main>
+
 <section>
-<h2 id="h1">什么是老年痴呆症？</h2>
-<p id="p1">老年痴呆症通常指阿尔茨海默病，是一种慢性、进行性的神经退行性疾病，并非正常衰老。它主要影响记忆、思维、判断力及日常生活能力。</p>
+<h2>什么是老年痴呆症？</h2>
+<p>老年痴呆症通常指阿尔茨海默病，是一种慢性、进行性的神经退行性疾病，并非正常衰老。它主要影响记忆、思维、判断力及日常生活能力。</p>
+<div class="img-box">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH4AAAB+..." alt="大脑示意图">
+<p style="font-size:14px;color:#666;margin-top:4px;">大脑示意图：正常大脑与老年痴呆症大脑对比</p>
+</div>
 </section>
 
 <section>
-<h2 id="h2">主要症状</h2>
+<h2>主要症状</h2>
 <ul>
 <li>记忆力下降，尤其是近期记忆</li>
 <li>语言表达困难</li>
@@ -47,26 +53,14 @@ footer{text-align:center;font-size:14px;color:#666;padding:20px}
 <li>情绪不稳定，易焦虑或抑郁</li>
 <li>日常生活能力下降</li>
 </ul>
+<div class="img-box">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH4AAAB+..." alt="症状示意图">
+<p style="font-size:14px;color:#666;margin-top:4px;">老年痴呆症症状示意图</p>
+</div>
 </section>
 
 <section>
-<h2 id="h3">病因与危险因素</h2>
-<ul>
-<li>遗传因素：家族中有阿尔茨海默病患者风险较高</li>
-<li>年龄增长：65岁以上发病风险显著增加</li>
-<li>心脑血管疾病：高血压、高血脂、糖尿病等</li>
-<li>生活方式：缺乏运动、饮食不健康、长期孤独或社交缺失</li>
-<li>脑损伤或神经炎症：曾经的脑外伤或炎症可能增加风险</li>
-</ul>
-</section>
-
-<section>
-<h2 id="h4">早期发现与诊断</h2>
-<p>通过医学检查、认知功能评估以及脑部影像学检查（如MRI、CT、PET扫描）可以及早发现阿尔茨海默病的迹象。早期诊断有助于延缓病情发展。</p>
-</section>
-
-<section>
-<h2 id="h5">预防措施</h2>
+<h2>预防措施</h2>
 <ul>
 <li>保持健康饮食：多蔬菜水果、坚果、深海鱼、全谷类</li>
 <li>适量运动：每天30分钟有氧运动，如快走、游泳、骑车</li>
@@ -74,81 +68,34 @@ footer{text-align:center;font-size:14px;color:#666;padding:20px}
 <li>规律作息：保证充足睡眠，避免熬夜</li>
 <li>心理健康：保持社交活动，减少孤独和抑郁</li>
 </ul>
+<div class="img-box">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH4AAAB+..." alt="运动锻炼示意图">
+<p style="font-size:14px;color:#666;margin-top:4px;">适量运动和脑力锻炼示意图</p>
+</div>
 </section>
 
 <section>
-<h2 id="h6">科学照护建议</h2>
+<h2>科学照护建议</h2>
 <ul>
-<li>照护环境安全：防跌倒、防走失、防意外</li>
-<li>日常生活协助：衣食起居、服药管理</li>
-<li>认知训练：记忆练习、互动游戏、音乐疗法</li>
-<li>心理支持：耐心交流、正面情绪引导</li>
-<li>遵医嘱用药：按医生指示使用药物，定期复查</li>
-</ul>
-</section>
-
-<section>
-<h2 id="h7">常见误区</h2>
-<ul>
-<li>误区1：老年痴呆就是正常衰老 —— 实际上是疾病，早期可干预</li>
-<li>误区2：药物能治愈 —— 药物只能延缓症状进展</li>
-<li>误区3：运动无关 —— 适量运动对脑健康非常重要</li>
-<li>误区4：只要家族没有病例就不用担心 —— 多种因素都会影响风险</li>
-</ul>
-</section>
-
-<section>
-<h2 id="h8">实用资源与参考资料</h2>
-<ul>
-<li><strong>书籍推荐：</strong>《阿尔茨海默病自助手册》《科学照护老年痴呆症》《脑健康与认知训练》</li>
-<li><strong>官方指南：</strong>世界卫生组织（WHO）老年痴呆症指南、中国老年学和老年医学学会指南</li>
-<li><strong>科普网站：</strong>离线可保存的PDF或HTML资料，如“阿尔茨海默病科普手册”</li>
-<li><strong>视频教程：</strong>可下载的老年痴呆症认知训练视频、护理技巧教学</li>
-<li><strong>社区与互助：</strong>本地老年人照护机构、家庭护理培训课程、志愿者支持群</li>
-<li><strong>医学期刊文章：</strong>可下载离线阅读的相关研究论文PDF，例如《Alzheimer's & Dementia》等</li>
+<li>定期就医，早期发现和干预</li>
+<li>药物治疗按医嘱执行，切勿自行更改</li>
+<li>日常生活提供安全、舒适环境</li>
+<li>鼓励轻度运动和社交活动</li>
+<li>家属支持与心理疏导同样重要</li>
 </ul>
 </section>
 
 </main>
 
 <footer>
-<p>© 2025 老年痴呆症科普网站</p>
+<p>© 2025 老年痴呆症科普网页 · 离线版</p>
 </footer>
 
 <script>
-function switchLang(){
-  if(document.documentElement.lang === "zh-CN"){
-    document.documentElement.lang = "en";
-    document.getElementById("title").innerText="Alzheimer's Disease";
-    document.getElementById("subtitle").innerText="Understand · Early Detection · Care";
-    document.getElementById("h1").innerText="What is Alzheimer's Disease?";
-    document.getElementById("p1").innerText="Alzheimer's disease is a chronic, progressive neurodegenerative disorder affecting memory, thinking, judgment, and daily life abilities.";
-    document.getElementById("h2").innerText="Main Symptoms";
-    document.getElementById("h3").innerText="Causes and Risk Factors";
-    document.getElementById("h4").innerText="Early Detection and Diagnosis";
-    document.getElementById("h5").innerText="Preventive Measures";
-    document.getElementById("h6").innerText="Care Suggestions";
-    document.getElementById("h7").innerText="Common Misconceptions";
-    document.getElementById("h8").innerText="Practical Resources & References";
-  }else{
-    document.documentElement.lang = "zh-CN";
-    document.getElementById("title").innerText="老年痴呆症（阿尔茨海默病）";
-    document.getElementById("subtitle").innerText="认识疾病 · 早期发现 · 科学照护";
-    document.getElementById("h1").innerText="什么是老年痴呆症？";
-    document.getElementById("p1").innerText="老年痴呆症通常指阿尔茨海默病，是一种慢性、进行性的神经退行性疾病，并非正常衰老。它主要影响记忆、思维、判断力及日常生活能力。";
-    document.getElementById("h2").innerText="主要症状";
-    document.getElementById("h3").innerText="病因与危险因素";
-    document.getElementById("h4").innerText="早期发现与诊断";
-    document.getElementById("h5").innerText="预防措施";
-    document.getElementById("h6").innerText="科学照护建议";
-    document.getElementById("h7").innerText="常见误区";
-    document.getElementById("h8").innerText="实用资源与参考资料";
-  }
-}
-
-function toggleFont(){
-  document.body.classList.toggle("big-font");
+function toggleFont() {
+    document.body.classList.toggle('big-font');
 }
 </script>
+
 </body>
 </html>

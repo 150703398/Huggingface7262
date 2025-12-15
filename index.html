@@ -39,7 +39,22 @@ footer{text-align:center;font-size:14px;color:#666;padding:20px}
 <h2 id="h1">什么是老年痴呆症？</h2>
 <p id="p1">老年痴呆症通常指阿尔茨海默病，是一种慢性、进行性的神经退行性疾病，并非正常衰老。</p>
 <div class="img-box">
-<img alt="正常大脑与阿尔茨海默病大脑对比图" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQwIiBoZWlnaHQ9IjM2MCIgdmlld0JveD0iMCAwIDY0MCAzNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjY0MCIgaGVpZ2h0PSIzNjAiIGZpbGw9IiNmNWY3ZmEiLz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0MCw2MCkiPjxyZWN0IHdpZHRoPSIyNTAiIGhlaWdodD0iMjQwIiByeD0iMTYiIGZpbGw9IiNlNmZmZmEiIHN0cm9rZT0iIzFmNGZkOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iMTI1IiB5PSItMTUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTgiPuato+W4uOiEszwvdGV4dD48Y2lyY2xlIGN4PSIxMjUiIGN5PSIxMjAiIHI9IjgwIiBmaWxsPSIjYmVlM2Y4Ii8+PHRleHQgeD0iMTI1IiB5PSIyMjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTQiPuato+W4uOe7k+S9kzwvdGV4dD48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzUwLDYwKSI+PHJlY3Qgd2lkdGg9IjI1MCIgaGVpZ2h0PSIyNDAiIHJ4PSIxNiIgZmlsbD0iI2ZmZWVlZSIgc3Ryb2tlPSIjYzUzMDMwIiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSIxMjUiIHk9Ii0xNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxOCI+6Zi/5bCU6YGT5rW36buE55eFPC90ZXh0PjxjaXJjbGUgY3g9IjEyNSIgY3k9IjEyMCIgcj0iNjUiIGZpbGw9IiNmZWIzYjIiLz48dGV4dCB4PSIxMjUiIHk9IjIyMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxNCI+5pi+5o+Q6JC95a2mPC90ZXh0PjwvZz48L3N2Zz4=" />
+<!-- 直接内嵌 SVG，避免 base64 / img 兼容问题 -->
+<svg width="640" height="360" viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;border-radius:8px;background:#f5f7fa">
+  <rect width="640" height="360" fill="#f5f7fa" />
+  <g transform="translate(40,60)">
+    <rect width="250" height="240" rx="18" fill="#e6fffa" stroke="#1f4fd8" stroke-width="2" />
+    <text x="125" y="-15" text-anchor="middle" font-size="18" fill="#222">正常大脑</text>
+    <circle cx="125" cy="120" r="85" fill="#bee3f8" />
+    <text x="125" y="220" text-anchor="middle" font-size="14" fill="#222">结构完整</text>
+  </g>
+  <g transform="translate(350,60)">
+    <rect width="250" height="240" rx="18" fill="#fff5f5" stroke="#c53030" stroke-width="2" />
+    <text x="125" y="-15" text-anchor="middle" font-size="18" fill="#222">阿尔茨海默病</text>
+    <circle cx="125" cy="120" r="65" fill="#feb2b2" />
+    <text x="125" y="220" text-anchor="middle" font-size="14" fill="#222">明显萎缩</text>
+  </g>
+</svg>
 </div>
 </section>
 
@@ -71,19 +86,23 @@ footer{text-align:center;font-size:14px;color:#666;padding:20px}
 <script>
 let lang='zh';
 function switchLang(){
-  lang = lang==='zh'?'en':'zh';
-  if(lang==='en'){
-    title.innerText="Alzheimer’s Disease";
-    subtitle.innerText="Understand · Detect Early · Care Properly";
-    h1.innerText="What is Alzheimer’s Disease?";
-    p1.innerText="Alzheimer’s disease is a chronic, progressive neurodegenerative disorder and is not a normal part of aging.";
-    h2.innerText="Common Symptoms";
-    list1.innerHTML="<li>Significant memory loss</li><li>Disorientation in time or place</li><li>Difficulty speaking</li><li>Personality and mood changes</li>";
-    h3.innerText="Simple Self-Check (Not Diagnostic)";
-    list2.innerHTML="<li>Do you forget recent events?</li><li>Do you repeat the same questions?</li><li>Do familiar places feel unfamiliar?</li>";
-    p2.innerText="If several answers are yes, seek medical advice early.";
-    foot.innerText="This page is for educational purposes only.";
-  }else{
+  const zh = lang === 'zh';
+  lang = zh ? 'en' : 'zh';
+  document.getElementById('title').innerText = zh ? "Alzheimer’s Disease" : "老年痴呆症（阿尔茨海默病）";
+  document.getElementById('subtitle').innerText = zh ? "Understand · Detect Early · Care Properly" : "认识疾病 · 早期发现 · 科学照护";
+  document.getElementById('h1').innerText = zh ? "What is Alzheimer’s Disease?" : "什么是老年痴呆症？";
+  document.getElementById('p1').innerText = zh ? "Alzheimer’s disease is a chronic, progressive neurodegenerative disorder and is not a normal part of aging." : "老年痴呆症通常指阿尔茨海默病，是一种慢性、进行性的神经退行性疾病，并非正常衰老。";
+  document.getElementById('h2').innerText = zh ? "Common Symptoms" : "常见症状";
+  document.getElementById('list1').innerHTML = zh
+    ? "<li>Significant memory loss</li><li>Disorientation in time or place</li><li>Difficulty speaking</li><li>Personality and mood changes</li>"
+    : "<li>近期记忆力明显下降</li><li>容易迷路或搞混时间</li><li>语言表达困难</li><li>性格与情绪改变</li>";
+  document.getElementById('h3').innerText = zh ? "Simple Self-Check (Not Diagnostic)" : "早期自测（非诊断）";
+  document.getElementById('list2').innerHTML = zh
+    ? "<li>Do you forget recent events?</li><li>Do you repeat the same questions?</li><li>Do familiar places feel unfamiliar?</li>"
+    : "<li>是否经常忘记刚发生的事情？</li><li>是否反复询问同样问题？</li><li>是否对熟悉的路线感到陌生？</li>";
+  document.getElementById('p2').innerText = zh ? "If several answers are yes, seek medical advice early." : "如多项为“是”，建议尽早前往正规医院就诊。";
+  document.getElementById('foot').innerText = zh ? "This page is for educational purposes only." : "本页面仅用于健康科普，不替代专业医疗建议。";
+}else{
     location.reload();
   }
 }
